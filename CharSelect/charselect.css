@@ -1,0 +1,71 @@
+html {
+    font-family: 'Squada One', cursive;
+    font-size: 3rem;
+}
+
+body {
+    margin: 0;
+    background-image: url("https://images.unsplash.com/photo-1530482817083-29ae4b92ff15?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=44f4aebbd1e1371d5bf7dc22016c5d29&auto=format&fit=crop&w=1351&q=80");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+p {
+    color: white;
+}
+
+.container {
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+
+    /* background color layer */
+    background-color: rgba(0, 0, 0, 0.76);
+
+}
+
+.panel {
+    flex-grow: 1;
+    transition: flex-grow cubic-bezier(.09,.71,.54,.93) .5s;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.panel1 {
+    background-image: url("https://ubistatic19-a.akamaihd.net/resource/en-us/game/rainbow6/siege/r6-operator-fuze_229884.png");
+}
+.panel2 {
+    background-image: url("https://ubistatic19-a.akamaihd.net/resource/en-us/game/rainbow6/siege/r6-operator-glaz_229905.png");
+}
+.panel3 {
+    background-image: url("https://ubistatic19-a.akamaihd.net/resource/en-us/game/rainbow6/siege/r6-operator-tachanka_229936.png");
+}
+.panel4 {
+    background-image: url("https://ubistatic19-a.akamaihd.net/resource/en-us/game/rainbow6/siege/r6-operator-kapkan_229908.png");
+}
+
+.open {
+    flex-grow: 2;
+}
+
+.open-active {
+    background-color: green;
+}
+
+.panel > *:first-child { transform: translateY(-100%); }
+.panel.open > *:first-child { transform: translateY(0); }
+
+.panel > *:last-child { transform: translateY(100%); }
+.panel.open > *:last-child { transform: translateY(0); }
+
+.panel-child {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    transition: cubic-bezier(.09,.71,.54,.93) .5s;
+}

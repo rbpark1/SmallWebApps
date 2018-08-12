@@ -1,0 +1,63 @@
+<!--
+A demo character select screen featuring characters from R6:S.
+Assets belong to Ubisoft, taken from: https://rainbow6.ubisoft.com/siege/en-us/game-info/operators.aspx
+Made with Flexbox.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spetsnaz Operators</title>
+    <link rel="stylesheet" type="text/css" href="charselect.css">
+    <link href="https://fonts.googleapis.com/css?family=Squada+One" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="panel panel1">
+            <div class="panel-child">
+                <p>Fuze</p>
+            </div>
+            <div class="panel-child">
+                <img src="https://ubistatic19-a.akamaihd.net/resource/en-us/game/rainbow6/siege/r6-operators-badge-fuze_229856.png">
+            </div>
+        </div>
+        <div class="panel panel2">
+            <div class="panel-child">
+                <p>Glaz</p>
+            </div>
+            <div class="panel-child">
+                <img src="https://ubistatic19-a.akamaihd.net/resource/en-us/game/rainbow6/siege/r6-operators-badge-glaz_229859.png">
+            </div>
+        </div>
+        <div class="panel panel3">
+            <div class="panel-child">
+                <p>Tachanka</p>
+            </div>
+            <div class="panel-child">
+                <img src="https://ubistatic19-a.akamaihd.net/resource/en-us/game/rainbow6/siege/r6-operators-badge-tachanka_229876.png">
+            </div>
+        </div>
+        <div class="panel panel4">
+            <div class="panel-child">
+                <p>Kapkan</p>
+            </div>
+            <div class="panel-child">
+                <img src="https://ubistatic19-a.akamaihd.net/resource/en-us/game/rainbow6/siege/r6-operators-badge-kapkan_229866.png">
+            </div>
+        </div>
+    </div>
+
+<script>
+    const panels = document.querySelectorAll(".panel");
+    panels.forEach(panel => panel.addEventListener('mouseover', toggleOpen));
+    panels.forEach(panel => panel.addEventListener('mouseout', toggleOpen));
+
+
+    function toggleOpen() {
+        this.classList.toggle("open");
+    }
+
+</script>
+</body>
+</html>
