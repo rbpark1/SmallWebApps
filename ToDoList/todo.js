@@ -25,18 +25,28 @@ function updateDisplay(){
     list.innerHTML = items.map((item, i) => {
         return `
         <li class="list-group-item">
-            <input type="checkbox" data-index="${i}" ${item.checked ? 'checked' : ''}/><label>${item.text}</label>
+            <div>
+                <input type="checkbox" data-index="${i}" ${item.checked ? 'checked' : ''}/><label>${item.text}</label>
+            </div>
+            <button class="btn" data-index="${i}"><i class="fa fa-close"></i></button>
         </li>
         `;
     }).join('');
 }
 
 function updateData(e){
+    console.log(e.target);
     if(e.target.matches("input")){
         let targetIndex = e.target.dataset.index;
         console.log(targetIndex);
         // flip checked
         items[targetIndex].checked = !items[targetIndex].checked;
+        localStorage.setItem('items', JSON.stringify(items));
+    } else if(e.target.matches("button") || e.target.matches("i")){
+        //delete from array
+        let targetIndex = e.target.dataset.index;
+        items.splice(targetIndex, 1);
+        updateDisplay();
         localStorage.setItem('items', JSON.stringify(items));
     }
 }
